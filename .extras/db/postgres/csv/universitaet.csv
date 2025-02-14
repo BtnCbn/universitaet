@@ -1,0 +1,3 @@
+id;version;name;standort;anzahl_studierende;homepage;gegruendet;fakultaeten;ranking;erzeugt;aktualisiert
+1000;1;"Technische Universitaet Muenchen";"Muenchen";42000;"https://www.tum.de";1868;"{Informatik,Maschinenbau,Elektrotechnik}";1;"2023-01-01 00:00:00";"2023-01-01 00:00:00"
+1001;1;"Universitaet Karlsruhe";"Karlsruhe";25000;"https://www.kit.edu";1825;"{Informatik,Physik,Mathematik}";2;"2023-01-01 00:00:00";"2023-01-01 00:00:00"

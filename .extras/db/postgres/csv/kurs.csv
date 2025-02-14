@@ -1,0 +1,5 @@
+id;titel;start_datum;universitaet_id
+1000;"Einfuehrung in die Informatik";"2023-04-01";1000
+1001;"Maschinenbau Grundlagen";"2023-04-01";1000
+1002;"Physik I";"2023-04-01";1001
+1003;"Mathematik I";"2023-04-01";1001

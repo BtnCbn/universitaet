@@ -1,0 +1,90 @@
+// STRG-SHIFT-V
+= Projekthandbuch
+ Botan Coban <cobo1011@h-ka.de>
+:doctype: book
+:toc: left
+:sectanchors:
+:sectlinks:
+:sectnums:
+:source-highlighter: highlight.js
+:icons: font
+// :kroki-server-url: https://kroki.io
+
+== Der Applikationsserver
+
+=== Der Applikationsserver im Überblick
+
+Der Applikationsserver stellt die zentrale Komponente der Anwendung dar, die die Kommunikation zwischen Benutzeroberfläche, Geschäftslogik und Datenhaltung steuert. Der Server ist in TypeScript mit dem NestJS-Framework implementiert.
+
+=== Die REST-Schnittstelle
+
+Eine **REST-Schnittstelle** (Representational State Transfer) ermöglicht die Kommunikation zwischen Client und Server über HTTP. Die Schnittstelle liefert Daten im JSON-Format.
+
+."UniversitaetGetController" für Lesezugriffe an der REST-Schnittstelle
+[plantuml,UniversitaetGetController,svg]
+----
+include::UniversitaetGetController.plantuml[]
+----
+
+."Sequenzdiagramm" mit den Methodenaufrufen
+[plantuml,sequenzdiagramm,svg]
+----
+include::sequenzdiagramm.plantuml[]
+----
+
+."UniversitaetWriteController" für Schreibzugriffe an der REST-Schnittstelle
+[plantuml,UniversitaetWriteController,svg]
+----
+include::UniversitaetWriteController.plantuml[]
+----
+
+=== Die Geschäftslogik
+
+Die **Geschäftslogik** enthält die Regeln und Prozesse, die den Kern der Anwendung ausmachen. Sie verarbeitet Daten und führt Operationen durch, die für die spezifischen Anwendungsfälle wichtig sind. Sie ist unabhängig von der Benutzeroberfläche oder der Datenhaltung.
+
+."UniversitaetReadService" von der Geschäftslogik
+[plantuml,UniversitaetReadService,svg]
+----
+include::UniversitaetReadService.plantuml[]
+----
+
+."UniversitaetWriteService" von der Geschäftslogik
+[plantuml,UniversitaetWriteService,svg]
+----
+include::UniversitaetWriteService.plantuml[]
+----
+
+=== Klasse für Entities
+
+Eine **Entity-Klasse** repräsentiert ein Datenobjekt in der Anwendung. Sie wird verwendet, um die Struktur und die Eigenschaften von Daten abzubilden, die in einer Datenbank gespeichert oder zwischen Systemen übertragen werden.
+
+.Entity
+[plantuml,Universitaet,svg]
+----
+include::Universitaet.plantuml[]
+----
+
+=== ER-Diagramm
+
+Ein **ER-Diagramm** (Entity-Relationship-Diagramm) stellt die Datenstruktur einer Anwendung grafisch dar. Es zeigt Entitäten, deren Attribute und die Beziehungen zwischen den Entitäten. Es dient als Grundlage für das Design von Datenbanken.
+
+.ER-Diagramm
+[plantuml,ER-Diagramm,svg]
+----
+include::ER-Diagramm.plantuml[]
+----
+
+== Programmierrichtlinien für TypeScript und JavaScript
+
+Für die Programmierung mit *TypeScript* und *JavaScript* sind folgende Styleguides empfehlenswert:
+
+[horizontal]
+_E-Book zu TypeScript_:: https://github.com/gibbok/typescript-book
+_Google_:: https://google.github.io/styleguide/tsguide.html
+_Airbnb_:: https://github.com/airbnb/javascript
+_Shopify_:: https://github.com/Shopify/javascript
+_React bei Airbnb_:: https://github.com/airbnb/javascript/tree/master/react
+_Angular_:: https://angular.io/docs/ts/latest/guide/style-guide.html
+_Microsoft_:: https://github.com/Microsoft/TypeScript/wiki/Coding-guidelines
+
+Von IBM und Red Hat gibt es bei GitHub _Node.js Reference Architecture_ https://github.com/nodeshift/nodejs-reference-architecture, wo alle möglichen Aspekte bei der Softwareentwicklung mit Node berücksichtigt sind und entsprechende Empfehlungen bzw. Best Practices beschrieben sind. Diese Dokumentation muss man einfach gelesen haben. Ebenfalls empfehlenswert ist https://github.com/goldbergyoni/nodebestpractices.
